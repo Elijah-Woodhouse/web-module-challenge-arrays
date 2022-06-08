@@ -335,6 +335,7 @@ function getAverageWordLength(list){
   }
   averageWords = counted / list.length;
   console.log(Math.round(averageWords));
+  return averageWords;
 }
 
 getAverageWordLength(copiedList);
@@ -376,8 +377,8 @@ function getRandomFlavors(list1, list2, list3, list4){
   while (newRandomFlavorList.length > 31){
     newRandomFlavorList.pop();
   }
-  console.log(newRandomFlavorList.length);
-  console.log(newRandomFlavorList);
+  /*console.log(newRandomFlavorList.length);
+  console.log(newRandomFlavorList);*/
   return newRandomFlavorList;
 }
 
