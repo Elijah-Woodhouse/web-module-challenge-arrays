@@ -302,10 +302,18 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(list, toLookFor){
+  var validList = [];
+  for (i = 0; i < list.length; i++){
+    if (list[i].includes(toLookFor)){
+      validList.push(list[i]);
+    }
+  }
+  console.log(validList);
+  return validList;
 }
 
+filterByWord(originalFlavors, "Vanilla");
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
