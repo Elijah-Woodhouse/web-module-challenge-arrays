@@ -35,6 +35,86 @@ const originalFlavors = [
   "Vanilla Burnt Almond"
 ]
 
+var newFlavors = [
+   "Date night",
+   "U.S.S Butterscotch (Stranger Things special)",
+   "Honey Almond",
+   "Mint Chocolate Chip",
+   "Chocolate",
+   "Oreo® Cookies'n Cream",
+   "Chocolate Chip",
+   "Pralines 'n Cream",
+   "Very Berry Strawberry",
+   "Chocolate Chip Cookie Dough",
+   "Old Fashioned Butter Pecan",
+   "Jamoca®",
+   "Jamoca® Almond Fudge",
+   "Reese's® Peanut Butter Cup",
+   "Rocky Road",
+   "Peanut Butter ’n Chocolate",
+   "Gold Medal Ribbon®",
+   "World Class® Chocolate",
+   "Cherries Jubilee",
+   "Chocolate Fudge",
+   "Daiquiri Ice",
+   "Rainbow Sherbet",
+   "Rainbow Swirl",
+ ]
+
+ var seasonalFlavors = [
+   "America's Birthday Cake",
+   "Baseball Nut®",
+   "Blueberry Cheesecake",
+   "Bourbon Street Pecan Pie",
+   "Brownie Bar Mashup",
+   "Cherry Cordial with Kisses",
+   "Chocolate Mousse Royale",
+   "French Vanilla",
+   "Eggnog",
+   "German Chocolate Cake",
+   "Icing on the Cake",
+   "Love Potion #31",
+   "New York Cheesecake",
+   "Nutty Coconut",
+   "Peppermint",
+   "Strawberry Cheesecake",
+   "Rock ’n Pop Swirl",
+   "Reese’s Peanut Butter Cup",
+   "Trick Oreo Treat",
+   "Winter White Chocolate",
+   "made with Snickers®",
+   "made with M&M's®",
+   "Heath®",
+   "Mango Tango"
+ ]
+
+ var regionalFlavors = [
+    "Pink Bubblegum",
+    "Caramel Macchiato",
+    "York Peppermint Pattie",
+    "Cotton Candy",
+    "Orange Sherbet",
+    "Grape Ice",
+    "Watermelon Ice",
+    "Miami Vice Sorbet",
+    "Splish Splash®",
+    "Wild 'n Reckless Sherbet",
+    "Lemon Custard",
+    "Oregon Blackberry",
+    "Bananas ‘n Strawberries",
+    "Mississippi Mud",
+    "Rum Raisin",
+    "Creole Cream Cheese",
+    "Chocolate Almond",
+    "Fudge Brownie",
+    "Banana Nut",
+    "Black Walnut",
+    "Cotton Candy Crackle",
+    "Quarterback Crunch",
+    "Chocolate Chocolate Chip Cheesecake",
+    "Caramel 'n' Cookies"
+  ]
+
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1: Copy the Array! 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 We have an array called originalFlavors with 31 flavors (see above).
 In these tasks, we will be reading and writing data to this array.
@@ -50,11 +130,11 @@ Use the copy function below to do the following:
 
 function copy(list){
   ingredientsCopy = list.slice();
-  console.log(ingredientsCopy);
+  /*console.log(ingredientsCopy);*/
   return ingredientsCopy;
 }
 
-copy(originalFlavors);
+copiedList = copy(originalFlavors);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -76,7 +156,7 @@ function is31Flavors(list){
   }
  }
 
-is31Flavors(originalFlavors);
+is31Flavors(copiedList);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Corporate has come to you with an idea for a new flavor:
@@ -98,80 +178,123 @@ Use the addFlavor function below to do the following:
 
 
 function addFlavor(list, addedFlavor){
-  let newList = list.push(addedFlavor);
-  return newList;
+  list.push(addedFlavor);
+/*console.log(list[list.length -1]);*/
+  return list;
  }
 
+addFlavor(copiedList, "Rainbow Sherbert")
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
-Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array.
+Houston, we have a problem! There are now 32 flavors in the
+originalFlavors array! Your task is to remove an item from
+the end of the array.
 
 Use the removeLastFlavor function below to do the following:
   1. Receive an array
   2. Remove the last item from the received array
   3. Return the resulting array
 
-  For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
+  For example: running removeLastFlavor(originalFlavors)
+  would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
 
 function removeLastFlavor(list){
- let newlist = list.pop()
+  let newList = list;
+  let poppped = list.pop();
+  /*console.log(newList);*/
+  return newList;
 }
 
+removeLastFlavor(copiedList);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that returns a flavor at a given index in the array.
 
 Use the getFlavorByIndex function below to do the following:
-  1. Recieve an array in the first parameter that will take the flavors array as an argument
-  2. Receive a number in the second parameter that will take the the desired index as an argument
+  1. Recieve an array in the first parameter that will take the
+  flavors array as an argument
+  2. Receive a number in the second parameter that will take
+  the the desired index as an argument
   3. Return the flavor located at the received index position
 
-  For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
+  For example: running getFlavorByIndex(originalFlavors, 2)
+  would return "Black Walnut", assuming Rainbow Sherbert has
+  been added successfully
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(list, index){
+  let indexedItem = list[index];
+  console.log(indexedItem);
+  return indexedItem;
 }
 
+getFlavorByIndex(copiedList, 3);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
-As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that single flavor from the array.
+As corporate wants to add more and more flavors to their lineup,
+they've realized that they need to remove flavors based on flavor name,
+as opposed to just arbitrarily removing the first or last flavor.
+Your task is to get an index by flavor name, and remove that single
+flavor from the array.
 
 Use the removeFlavorByName function below to do the following:
-  1. Receive an array in the first parameter that will take the flavors array as an argument
-  2. Receive a string in the second parameter that will take the flavor name as as an argument
+  1. Receive an array in the first parameter that will take the
+  flavors array as an argument
+  2. Receive a string in the second parameter that will take the
+  flavor name as as an argument
   3. Remove the received flavor from the received array
   4. Return the resulting array that now contains one less flavor
 
-  For example: running removeFlavorByName(originalFlavors, "Rocky Road") would return an array with the a length of 30 because Rocky Road would have been removed.
+  For example: running removeFlavorByName(originalFlavors, "Rocky Road")
+  would return an array with the a length of 30 because Rocky Road would have
+  been removed.
 
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(list, toRemove){
+  for (let i = 0; i < list.length; i++){
+    if (list[i] === toRemove){
+      newList = list.splice(i, 1);
+      /*console.log(list.length);*/
+      /*console.log(list);*/
+      return list;
+    }
+  }
 }
 
+removeFlavorByName(copiedList, "Rocky Road");
+removeFlavorByName(copiedList, "Lemon Crisp");
+removeFlavorByName(copiedList, "Maple Nut");
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
-July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors.
-Your task is to write a function that checks every item in the array for a string and returns a new array called filteredArray with only the values that contain the received string. This would allow you to be able to filter for "Vanilla", "Sherbet", "Lemon" etc. when different holidays roll around by passing in those specific strings.
+July 7th is "World Chocolate Day" and Baskin Robins wants to create
+promotional materials highlighting all of their chocolate flavors.
+Your task is to write a function that checks every item in the array
+for a string and returns a new array called filteredArray with only the values
+ that contain the received string. This would allow you to be able to filter for
+ "Vanilla", "Sherbet", "Lemon" etc. when different holidays roll around by
+ passing in those specific strings.
 
 Use the filterByWord function below to do the following:
-  1. Receive an array in the first parameter that will take the flavors array as an argument
-  2. Receive a string in the second parameter that will take the filter value as as an argument (example: "chocolate")
+  1. Receive an array in the first parameter that will take the
+  flavors array as an argument
+  2. Receive a string in the second parameter that will take
+  the filter value as as an argument (example: "chocolate")
   3. Check to see if any of the flavors in the array contain that string
   4. If they do, add them to a new array
   5. Return the new array that contains the filtered flavors
 
-  For example: filterByWord(originalFlavors, "Chocolate") should return ["Chocolate", "Chocolate Almond", "Chocolate Chip", "Chocolate Fudge", "Chocolate Mint", "Chocolate Ribbon"]
+  For example: filterByWord(originalFlavors, "Chocolate") should return
+  ["Chocolate", "Chocolate Almond", "Chocolate Chip", "Chocolate Fudge",
+  "Chocolate Mint", "Chocolate Ribbon"]
 
   HINT - you can use the .includes method to help you solve this
 
@@ -187,119 +310,78 @@ function filterByWord(/*your code here*/){
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
 
-/* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
+/* STRETCH 1: Write a function that returns the average
+number of words in an array. You should be able to use
+this function for any array, but can test with originalFlavors.
 
 Use the getAverageWordLength function below to do the following:
   1. Receive the originalFlavors array
   2. Count how many words per item in the array
   3. Return the average number of words per item in the array
 
-  For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.
+  For example: getAverageWordLength(originalFlavors) should
+  return a number between 0 and 3.
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
+function getAverageWordLength(list){
+  let counted = 0;
+  for (let i = 0; i < list.length; i++){
+    var len = list[i].split(' ').length;
+    if (len > 1){
+      counted += len;
+    } else {
+      counted += 1;
+    }
+  }
+  averageWords = counted / list.length;
+  console.log(Math.round(averageWords));
 }
 
+getAverageWordLength(copiedList);
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
-Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors
-from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors and store it in an array called randomFlavors.
+Baskin Robins now offers new flavors, seasonal flavors,
+and even regional flavors. Write a function that will
+randomly select a total of 31 flavors
+from originalFlavors, currentFlavors, seasonalFlavors,
+and regionalFlavors and store it in an array called
+randomFlavors.
 
-Use the getRandomFlavors function and new arrays below to do the following:
-  1. Receive the four arrays with all the differnet flavors (originalFlavors is above, the others are below)
+Use the getRandomFlavors function and new arrays
+below to do the following:
+  1. Receive the four arrays with all the differnet
+  flavors (originalFlavors is above, the others are below)
   2. Randomly pick flavors from all four arrays
   3. Return a new array called randomFlavors that has a lenght of 31
 
-  For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
+  For example: getRandomFlavors(originalFlavors,
+  newFlavors, seasonalFlavors, regionalFlavors)
+  might return ["Strawberry Cheesecake", "Eggnog,"..."
+  Chocolate"].
 */
 
 
-function getRandomFlavors(/*code here*/){
-  /*code here*/
+
+function getRandomFlavors(list1, list2, list3, list4){
+  var newRandomFlavorList = [];
+  if (newRandomFlavorList.length < list1.length) {
+    for (let i = 0; i < list1.length; i++){
+      var randomListIndex = Math.round(Math.random() * list2.length)
+      newRandomFlavorList.push(list1[randomListIndex]);
+      newRandomFlavorList.push(list2[randomListIndex]);
+      newRandomFlavorList.push(list3[randomListIndex]);
+      newRandomFlavorList.push(list4[randomListIndex]);
+    }
+  }
+  while (newRandomFlavorList.length > 31){
+    newRandomFlavorList.pop();
+  }
+  console.log(newRandomFlavorList.length);
+  console.log(newRandomFlavorList);
+  return newRandomFlavorList;
 }
 
-// NEW DATA ARRAYS FOR STRETCH 2 ⬇️
-// const newFlavors = [
-//   "Date night",
-//   "U.S.S Butterscotch (Stranger Things special)",
-//   "Honey Almond",
-//   "Mint Chocolate Chip",
-//   "Chocolate",
-//   "Oreo® Cookies'n Cream",
-//   "Chocolate Chip",
-//   "Pralines 'n Cream",
-//   "Very Berry Strawberry",
-//   "Chocolate Chip Cookie Dough",
-//   "Old Fashioned Butter Pecan",
-//   "Jamoca®",
-//   "Jamoca® Almond Fudge",
-//   "Reese's® Peanut Butter Cup",
-//   "Rocky Road",
-//   "Peanut Butter ’n Chocolate",
-//   "Gold Medal Ribbon®",
-//   "World Class® Chocolate",
-//   "Cherries Jubilee",
-//   "Chocolate Fudge",
-//   "Daiquiri Ice",
-//   "Rainbow Sherbet",
-//   "Rainbow Swirl"
-// ]
-
-// const seasonalFlavors = [
-//   "America's Birthday Cake",
-//   "Baseball Nut®",
-//   "Blueberry Cheesecake",
-//   "Bourbon Street Pecan Pie",
-//   "Brownie Bar Mashup",
-//   "Cherry Cordial with Kisses",
-//   "Chocolate Mousse Royale",
-//   "French Vanilla",
-//   "Eggnog",
-//   "German Chocolate Cake",
-//   "Icing on the Cake",
-//   "Love Potion #31",
-//   "New York Cheesecake",
-//   "Nutty Coconut",
-//   "Peppermint",
-//   "Strawberry Cheesecake",
-//   "Rock ’n Pop Swirl",
-//   "Reese’s Peanut Butter Cup",
-//   "Trick Oreo Treat",
-//   "Winter White Chocolate",
-//   "made with Snickers®",
-//   "made with M&M's®",
-//   "Heath®",
-//   "Mango Tango"
-// ]
-
-// const regionalFlavors = [
-//   "Pink Bubblegum",
-//   "Caramel Macchiato",
-//   "York Peppermint Pattie",
-//   "Cotton Candy",
-//   "Orange Sherbet",
-//   "Grape Ice",
-//   "Watermelon Ice",
-//   "Miami Vice Sorbet",
-//   "Splish Splash®",
-//   "Wild 'n Reckless Sherbet",
-//   "Lemon Custard",
-//   "Oregon Blackberry",
-//   "Bananas ‘n Strawberries",
-//   "Mississippi Mud",
-//   "Rum Raisin",
-//   "Creole Cream Cheese",
-//   "Chocolate Almond",
-//   "Fudge Brownie",
-//   "Banana Nut",
-//   "Black Walnut",
-//   "Cotton Candy Crackle",
-//   "Quarterback Crunch",
-//   "Chocolate Chocolate Chip Cheesecake",
-//   "Caramel 'n' Cookies"
-// ]
-
+getRandomFlavors(originalFlavors, newFlavors, regionalFlavors, seasonalFlavors);
 
 
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
