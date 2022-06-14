@@ -178,12 +178,11 @@ Use the addFlavor function below to do the following:
 
 
 function addFlavor(list, addedFlavor){
-  list.push(addedFlavor);
-/*console.log(list[list.length -1]);*/
+  list.unshift(addedFlavor);
   return list;
  }
 
-addFlavor(copiedList, "Rainbow Sherbert")
+//addFlavor(copiedList, "Rainbow Sherbert")
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -261,8 +260,8 @@ Use the removeFlavorByName function below to do the following:
 function removeFlavorByName(list, toRemove){
   for (let i = 0; i < list.length; i++){
     if (list[i] === toRemove){
-      const newList = list.splice(i, 1);
-      return newList;
+      list.splice(i, 1);
+      return list;
     }
   }
 }
