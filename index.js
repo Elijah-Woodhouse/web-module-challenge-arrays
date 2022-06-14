@@ -129,12 +129,12 @@ Use the copy function below to do the following:
 
 
 function copy(list){
-  ingredientsCopy = list.slice();
-  /*console.log(ingredientsCopy);*/
+  const ingredientsCopy = list;
+  //console.log(ingredientsCopy);
   return ingredientsCopy;
 }
 
-copiedList = copy(originalFlavors);
+const copiedList = copy(originalFlavors);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -261,10 +261,8 @@ Use the removeFlavorByName function below to do the following:
 function removeFlavorByName(list, toRemove){
   for (let i = 0; i < list.length; i++){
     if (list[i] === toRemove){
-      newList = list.splice(i, 1);
-      /*console.log(list.length);*/
-      /*console.log(list);*/
-      return list;
+      const newList = list.splice(i, 1);
+      return newList;
     }
   }
 }
@@ -272,6 +270,7 @@ function removeFlavorByName(list, toRemove){
 removeFlavorByName(copiedList, "Rocky Road");
 removeFlavorByName(copiedList, "Lemon Crisp");
 removeFlavorByName(copiedList, "Maple Nut");
+removeFlavorByName(copiedList, "Rainbow Sherbert");
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -303,8 +302,8 @@ Use the filterByWord function below to do the following:
 
 
 function filterByWord(list, toLookFor){
-  var validList = [];
-  for (i = 0; i < list.length; i++){
+  const validList = [];
+  for (let i = 0; i < list.length; i++){
     if (list[i].includes(toLookFor)){
       validList.push(list[i]);
     }
@@ -341,7 +340,7 @@ function getAverageWordLength(list){
       counted += 1;
     }
   }
-  averageWords = counted / list.length;
+  var averageWords = counted / list.length;
   console.log(Math.round(averageWords));
   return averageWords;
 }
